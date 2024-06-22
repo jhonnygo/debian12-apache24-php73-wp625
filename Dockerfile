@@ -19,7 +19,7 @@ RUN apt-get -y update && apt-get -y install apt-transport-https ca-certificates 
     echo "deb http://deb.debian.org/debian $(lsb_release -sc) main contrib non-free" > /etc/apt/sources.list.d/backports.list && \
     apt-get -y update
 
-COPY files-config/000-default.conf files-config/apache2.conf files-config/start.sh files-config/.env /root/
+COPY files-config/000-default.conf files-config/apache2.conf files-config/start.sh /root/
 
 #---------------------------------------------------------------------------
 
