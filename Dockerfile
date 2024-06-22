@@ -73,11 +73,9 @@ FROM wordpress AS final
 
 WORKDIR /var/www/html
 
-COPY --from=base /root/.env /var/.env
 COPY --from=base /root/start.sh /usr/local/bin/start.sh
 
 RUN apt-get -y install mariadb-client && \
-    dos2unix /var/.env && \
     dos2unix /usr/local/bin/start.sh
 
 CMD ["/usr/local/bin/start.sh"]
